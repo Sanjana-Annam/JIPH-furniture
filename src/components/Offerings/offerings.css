@@ -1,0 +1,163 @@
+.offerings-section {
+  padding: 60px 6%;
+  background: #f9fafb;
+}
+
+/* ===== TITLE & SUBTITLE ===== */
+
+.offerings-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #0f172a;
+  text-align: center;
+}
+
+.offerings-subtitle {
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;        /* subtitle centered */
+}
+
+/* ===== GRID ===== */
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+}
+
+/* Make all cards equal height */
+.offering-card-row {
+  background: white;
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;              /* IMPORTANT FIX */
+}
+
+.offering-card-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Title always at same position */
+.offering-card-row h3 {
+  margin: 0 0 0 0;
+  font-size: 20px;
+  color: #0f172a;
+  text-align: left;
+
+  min-height: 48px;         /* keeps titles aligned */
+}
+
+/* Body section fixed */
+.offering-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  flex: 1;                  /* KEY FIX - makes all cards equal */
+}
+
+/* Description text consistent */
+.offering-body p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: left;
+
+  flex: 1;                  /* makes text take equal space */
+}
+
+/* Icon box remains same */
+
+
+/* ===== ICON BELOW TITLE ===== */
+
+.offering-icon-box {
+  width: 70px;
+  height: 70px;
+  margin: 25px 50px 30px 0;
+  background: #0f5c45;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.offering-card-row:hover .offering-icon-box {
+  background: #0c4d3a;
+  transform: scale(1.05);
+}
+
+/* ===== DESCRIPTION LEFT ALIGNED ===== */
+
+.offering-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: left;        /* description left aligned */
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .offerings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offerings-section {
+    padding: 60px 5%;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== EXPLORE BUTTON SECTION ===== */
+
+.offerings-cta {
+  margin-top: 45px;
+  text-align: center;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #0f5c45;
+  color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #0c4d3a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 92, 69, 0.25);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .explore-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
