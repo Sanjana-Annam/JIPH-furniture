@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProcessFlow.css";
+import "./processFlow.css";
 
 const StepCard = ({ number, title, desc, isLast }) => {
   return (
