@@ -323,7 +323,7 @@
 }
 
 /* Mobile Devices */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
 
   .hero-inner {
     display: flex;
