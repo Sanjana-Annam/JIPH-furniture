@@ -14,7 +14,7 @@
   padding: 0 clamp(1.5rem, 5vw, 5rem);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
 }
 
@@ -218,7 +218,24 @@
 .hero-nav a:hover {
   color: #0f5c45;
 }
-/* ===== RESPONSIVE DESIGN ===== */
+
+/* ===== HERO HEADER LOGO ===== */
+
+.hero-header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px clamp(1.5rem, 5vw, 5rem);
+}
+
+.hero-logo {
+  max-height: 65px;
+  width: auto;
+}
+
+/* ======================================================= */
+/* ============== RESPONSIVE DESIGN STARTS =============== */
+/* ======================================================= */
 
 /* Large Tablets */
 @media (max-width: 1024px) {
@@ -240,15 +257,29 @@
   }
 }
 
-/* Tablets */
+/* Tablets and Mobile */
 @media (max-width: 768px) {
+
   .hero {
     padding: 60px 0;
     min-height: auto;
   }
 
+  /* ===== MAIN CHANGE: FORM FIRST ON MOBILE ===== */
+
   .hero-inner {
     padding: 0 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-inner > div:nth-child(1) {
+    order: 2; /* Hero content goes second */
+  }
+
+  .hero-inner > div:nth-child(2) {
+    order: 1; /* Form comes first */
   }
 
   .hero-content h1 {
@@ -278,6 +309,7 @@
   .quote-form {
     padding: 30px 22px;
     border-radius: 18px;
+    max-width: 100%;
   }
 
   .quote-form h2 {
@@ -292,6 +324,20 @@
 
 /* Mobile Devices */
 @media (max-width: 480px) {
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-inner > div:nth-child(1) {
+    order: 2;
+  }
+
+  .hero-inner > div:nth-child(2) {
+    order: 1;
+  }
+
   .hero-content h1 {
     font-size: 1.9rem;
     line-height: 1.2;
@@ -349,17 +395,4 @@
   .quote-form h2 {
     font-size: 1.25rem;
   }
-}
-/* ===== HERO HEADER LOGO ===== */
-
-.hero-header {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 18px clamp(1.5rem, 5vw, 5rem);
-}
-
-.hero-logo {
-  max-height: 65px;
-  width: auto;
 }
