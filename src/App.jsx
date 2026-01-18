@@ -1,6 +1,7 @@
 import Hero from "./components/Hero/Hero";
 import BrandSlider from "./components/BrandSlider/BrandSlider";
-import Offerings from "./components/Offerings/Offerings";
+import CategoryCarousel from "./components/ProductShowcase/CategoryCarousel";
+
 import ProcessFlow from "./components/ProcessFlow/ProcessFlow"; 
 import Test from "./components/Test/Test";
 import FAQ from "./components/FAQ/FAQ";
@@ -11,7 +12,7 @@ function App() {
     <>
       <Hero />
       <BrandSlider />
-      <Offerings />
+      <CategoryCarousel />
       <ProcessFlow />
      <Test />
      <FAQ />

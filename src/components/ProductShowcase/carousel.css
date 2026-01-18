@@ -1,0 +1,267 @@
+.carousel-section {
+  padding: 70px 0;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.carousel-title {
+  font-size: 34px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.carousel-subtitle {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+/* ===== FULL WIDTH CAROUSEL ===== */
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== EACH SLIDE FULL WIDTH ===== */
+
+.category-slide {
+  min-width: 100%;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  box-sizing: border-box;
+
+  scroll-snap-align: start;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== MAIN HERO IMAGE ===== */
+
+.main-image {
+  width: 92%;
+  max-width: 1200px;
+  height: 450px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== TITLE ===== */
+
+.category-title {
+  width: 92%;
+  max-width: 1200px;
+  text-align: left;
+  margin: 15px 0;
+  color: #0f172a;
+  font-size: 24px;
+}
+
+/* ===== SUB IMAGES ===== */
+
+.sub-images {
+  width: 92%;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sub-image-box {
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eef2ff;
+}
+
+.sub-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.sub-image-box:hover img {
+  transform: scale(1.06);
+}
+
+/* ===== LINK ===== */
+
+.view-products {
+  width: 92%;
+  max-width: 1200px;
+  text-align: left;
+  color: #0f5c45;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-products:hover {
+  text-decoration: underline;
+}
+
+/* ===== CTA ===== */
+
+.carousel-cta {
+  margin-top: 40px;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #0f5c45;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #0c4d3a;
+  transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .main-image {
+    height: 360px;
+  }
+
+  .sub-image-box {
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 26px;
+  }
+
+  .main-image {
+    width: 95%;
+    height: 260px;
+  }
+
+  .sub-images {
+    grid-template-columns: repeat(2, 1fr);
+    width: 95%;
+  }
+
+  .sub-image-box {
+    height: 120px;
+  }
+
+  .category-title {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-image {
+    height: 200px;
+  }
+
+  .sub-image-box {
+    height: 100px;
+  }
+
+  .carousel-section {
+    padding: 50px 0;
+  }
+}
+/* ===== CLICKABLE AREA ===== */
+
+.carousel-container {
+  cursor: pointer;
+  position: relative;
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  user-select: none;
+  z-index: 10;
+}
+
+.nav-arrow.left {
+  left: 20px;
+}
+
+.nav-arrow.right {
+  right: 20px;
+}
+
+.nav-arrow:hover {
+  background: #0f5c45;
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 768px) {
+  .nav-arrow {
+    display: none;
+  }
+}
+/* ===== MOBILE TOUCH OPTIMIZATION ===== */
+
+.carousel-container {
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Make entire slide clickable on mobile */
+@media (max-width: 768px) {
+  .carousel-container {
+    cursor: grab;
+  }
+
+  .carousel-container:active {
+    cursor: grabbing;
+  }
+}
